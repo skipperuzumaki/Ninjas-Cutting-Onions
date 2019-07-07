@@ -40,6 +40,9 @@
     <Filter Include="imgui">
       <UniqueIdentifier>{8b3c7dd6-6d7e-4e5f-9157-530b072ae3ae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFiles">
+      <UniqueIdentifier>{1e1093bd-2985-471f-9f1b-b6f5c711fd06}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -298,6 +301,12 @@
     </ClInclude>
     <ClInclude Include="ConditionalNoexcept.h">
       <Filter>Header Files\Macros</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>GameFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>GameFiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
