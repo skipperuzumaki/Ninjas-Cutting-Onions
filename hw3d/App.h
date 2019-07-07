@@ -25,4 +25,5 @@ private:
 	Camera cam;
 	PointLight light;
 	Model nano{ wnd.Gfx(),"Models\\nano.gltf" };
+	Model Suzie{ wnd.Gfx(),"Models\\Suzanne.obj" };
 };

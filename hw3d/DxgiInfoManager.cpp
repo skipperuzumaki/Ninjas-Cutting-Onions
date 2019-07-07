@@ -3,6 +3,7 @@
 #include "Graphics.h"
 #include <dxgidebug.h>
 #include <memory>
+#include <vector>
 #include "GraphicsThrowMacros.h"
 #include "WindowsThrowMacros.h"
 
