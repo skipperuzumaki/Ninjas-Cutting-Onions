@@ -308,6 +308,9 @@
     <ClInclude Include="Object.h">
       <Filter>GameFiles</Filter>
     </ClInclude>
+    <ClInclude Include="Interfaces.h">
+      <Filter>GameFiles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="hw3d.rc">
