@@ -121,6 +121,7 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Topology.cpp" />
     <ClCompile Include="TransformCbuf.cpp" />
+    <ClCompile Include="Turret.cpp" />
     <ClCompile Include="Vertex.cpp" />
     <ClCompile Include="VertexBuffer.cpp" />
     <ClCompile Include="VertexShader.cpp" />
@@ -167,6 +168,7 @@
     <ClInclude Include="PointLight.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="PixelShader.h" />
+    <ClInclude Include="Rect.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Sampler.h" />
     <ClInclude Include="SolidSphere.h" />
@@ -175,6 +177,7 @@
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Topology.h" />
     <ClInclude Include="TransformCbuf.h" />
+    <ClInclude Include="Turret.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="VertexBuffer.h" />
     <ClInclude Include="VertexShader.h" />

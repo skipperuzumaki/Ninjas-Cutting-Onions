@@ -153,6 +153,9 @@
     <ClCompile Include="Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Turret.cpp">
+      <Filter>GameFiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WindowsMessageMap.h">
@@ -309,6 +312,12 @@
       <Filter>GameFiles</Filter>
     </ClInclude>
     <ClInclude Include="Interfaces.h">
+      <Filter>GameFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Turret.h">
+      <Filter>GameFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
       <Filter>GameFiles</Filter>
     </ClInclude>
   </ItemGroup>
