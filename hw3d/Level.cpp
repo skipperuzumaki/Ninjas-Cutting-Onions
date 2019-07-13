@@ -10,10 +10,14 @@ Platform::~Platform()
 
 void Platform::draw(Graphics& gfx)
 {
+	for (int i = 0; i < objects.size(); i++) {
+		objects.at(i).Draw(gfx);
+	}
 }
 
 void Platform::update(float dt, Keyboard& kbd)
 {
+	//update object as per object transformations
 }
 
 int Platform::getid()
@@ -40,5 +44,5 @@ void Level::Draw(Graphics& gfx)
 void Level::Update(float dt, Keyboard& kbd)
 {
 	platforms.first.update(dt, kbd);
-
+	platforms.second.update(dt, kbd);
 }

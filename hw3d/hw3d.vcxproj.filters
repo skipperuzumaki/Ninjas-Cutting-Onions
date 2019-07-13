@@ -43,6 +43,12 @@
     <Filter Include="GameFiles">
       <UniqueIdentifier>{1e1093bd-2985-471f-9f1b-b6f5c711fd06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameFiles\Header Files">
+      <UniqueIdentifier>{d36673f6-6db7-4c6c-9052-9d8a72f1773c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFiles\Source Files">
+      <UniqueIdentifier>{7d5edf87-d3bf-4d36-bc70-ff63bee8a91a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinMain.cpp">
@@ -153,11 +159,14 @@
     <ClCompile Include="Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Turret.cpp">
-      <Filter>GameFiles</Filter>
-    </ClCompile>
     <ClCompile Include="Level.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>GameFiles\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Turret.cpp">
+      <Filter>GameFiles\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>GameFiles\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -308,20 +317,20 @@
     <ClInclude Include="ConditionalNoexcept.h">
       <Filter>Header Files\Macros</Filter>
     </ClInclude>
+    <ClInclude Include="Interfaces.h">
+      <Filter>GameFiles\Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Level.h">
-      <Filter>GameFiles</Filter>
+      <Filter>GameFiles\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Object.h">
-      <Filter>GameFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="Interfaces.h">
-      <Filter>GameFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="Turret.h">
-      <Filter>GameFiles</Filter>
+      <Filter>GameFiles\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Rect.h">
-      <Filter>GameFiles</Filter>
+      <Filter>GameFiles\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Turret.h">
+      <Filter>GameFiles\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -53,7 +53,7 @@ class Model
 {
 public:
 	Model( Graphics& gfx,const std::string fileName );
-	void Draw( Graphics& gfx ) const noxnd;
+	void Draw(Graphics& gfx, DirectX::FXMMATRIX transformations) const noxnd;
 	void ShowWindow( const char* windowName = nullptr ) noexcept;
 	~Model() noexcept;
 private:

@@ -215,13 +215,13 @@ Model::Model( Graphics& gfx,const std::string fileName )
 	pRoot = ParseNode( *pScene->mRootNode );
 }
 
-void Model::Draw( Graphics& gfx ) const noxnd
+void Model::Draw(Graphics& gfx, DirectX::FXMMATRIX transformations) const noxnd
 {
 	if( auto node = pWindow->GetSelectedNode() )
 	{
 		node->SetAppliedTransform( pWindow->GetTransform() );
 	}
-	pRoot->Draw( gfx,dx::XMMatrixIdentity() );
+	pRoot->Draw( gfx,transformations );
 }
 
 void Model::ShowWindow( const char* windowName ) noexcept
