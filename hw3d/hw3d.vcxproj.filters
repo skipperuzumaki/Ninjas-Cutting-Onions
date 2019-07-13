@@ -156,6 +156,9 @@
     <ClCompile Include="Turret.cpp">
       <Filter>GameFiles</Filter>
     </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WindowsMessageMap.h">

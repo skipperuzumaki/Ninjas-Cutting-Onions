@@ -20,12 +20,9 @@ void TurretAmmo::Update()
 }
 
 Turret::Turret(std::string name)
+	:
+	Object(std::string("Models/Turret.obj"), true)
 {
-}
-
-bool Turret::Intersecting(std::pair<float, float> start, std::pair<float, float> end)
-{
-	return false;
 }
 
 void Turret::OnInteract()
