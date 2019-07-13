@@ -12,7 +12,7 @@ public:
 	~Object();
 	void Draw(Graphics& gfx);
 	void update();
-	void translate(float x, floatt y);
+	void translate(float x, float y);
 	void rotate(float theta);
 	int getid();
 private:
