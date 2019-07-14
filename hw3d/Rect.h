@@ -4,6 +4,7 @@
 class Rect
 {
 public:
+	Rect() = default;
 	Rect(std::pair<float, float> top, std::pair<float, float> right, std::pair<float, float> bottom, std::pair<float, float> left)
 	{
 		Top = top;

@@ -14,9 +14,13 @@ public:
 	void update();
 	void translate(float x, float y);
 	void rotate(float theta);
+	void rotateZ(float theta);
 	int getid();
 private:
 	int id;
 	Model model;
-	DirectX::FXMMATRIX transformation = DirectX::XMMatrixIdentity();
+	DirectX::XMMATRIX translation = DirectX::XMMatrixIdentity();
+	DirectX::XMMATRIX rotation = DirectX::XMMatrixIdentity();
+	DirectX::XMMATRIX rotationZ = DirectX::XMMatrixIdentity();
+	DirectX::XMMATRIX transformation = DirectX::XMMatrixIdentity();
 };

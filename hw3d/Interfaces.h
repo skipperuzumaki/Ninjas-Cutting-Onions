@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "Rect.h"
 //holds all object interaction interfaeces
 
 class SpawnBlock
@@ -24,6 +25,7 @@ public:
 class Throwable
 {
 public:
+	Rect extent;
 	virtual void OnThrow(std::pair<float, float> start, std::pair<float, float> end) = 0;
 	~Throwable(){}
 };
@@ -51,4 +53,11 @@ public:
 	virtual void Process() = 0;
 	virtual Dish* Unload() = 0;
 	~Container(){}
+};
+
+class Catchable
+{
+	Rect extent;
+	virtual void OnCatch(Throwable& thro) = 0;
+	~Catchable(){}
 };

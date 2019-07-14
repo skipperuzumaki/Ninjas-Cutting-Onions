@@ -215,7 +215,7 @@ Model::Model( Graphics& gfx,const std::string fileName )
 	pRoot = ParseNode( *pScene->mRootNode );
 }
 
-void Model::Draw(Graphics& gfx, DirectX::FXMMATRIX transformations) const noxnd
+void Model::Draw(Graphics& gfx, DirectX::FXMMATRIX transformations)
 {
 	if( auto node = pWindow->GetSelectedNode() )
 	{

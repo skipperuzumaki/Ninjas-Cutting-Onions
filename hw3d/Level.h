@@ -22,7 +22,8 @@ public:
 	int getid();
 private:
 	int id;
-	std::vector<Object> objects;
+	std::vector<Object> StaticObjects;
+	std::vector<Object> DynamicObjects;
 };
 
 class Level
