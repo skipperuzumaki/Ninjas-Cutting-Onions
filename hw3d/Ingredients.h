@@ -113,3 +113,7 @@ class Octopus : Ingredient
 {
 	int id = 26;
 };
+class Unviable : Ingredient
+{
+	int id = std::numeric_limits<int>::max();
+};

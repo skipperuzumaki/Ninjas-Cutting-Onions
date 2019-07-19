@@ -50,7 +50,8 @@ public:
 class Container
 {
 public:
-	virtual void Accept(Dish& ingredient) = 0;
+	bool Cooked;
+	virtual void Accept(Dish* ingredient) = 0;
 	virtual void Process() = 0;
 	virtual Dish* Unload() = 0;
 	~Container(){}

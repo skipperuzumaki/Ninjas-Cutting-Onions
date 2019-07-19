@@ -335,6 +335,9 @@
     <ClInclude Include="Ingredients.h">
       <Filter>GameFiles\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Appliances.h">
+      <Filter>GameFiles\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="hw3d.rc">
