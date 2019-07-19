@@ -33,13 +33,14 @@ public:
 class Ingredient
 {
 public:
+	int id;
 	~Ingredient(){}
 };
 
 class Dish
 {
 public:
-	std::vector<Ingredient> Ingridents;
+	std::vector<Ingredient> Ingredents;
 	virtual bool add(Dish&) = 0;
 	virtual bool add(Ingredient&) = 0;
 	virtual std::vector<Ingredient> show() = 0;
