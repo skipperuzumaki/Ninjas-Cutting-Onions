@@ -3,11 +3,12 @@
 #include "Object.h"
 #include "Interfaces.h"
 #include "Rect.h"
+#include "Graphics.h"
 
 class TurretAmmo :Object, Throwable, Ingredient
 {
 public:
-	TurretAmmo(std::string name);
+	TurretAmmo(Graphics& gfx, std::string name);
 	virtual void OnThrow(std::pair<float, float> start, std::pair<float, float> end) override;
 	void Update();
 private:
@@ -19,7 +20,7 @@ private:
 class Turret : Object,SpawnBlock,Interactible
 {
 public:
-	Turret(std::string name);
+	Turret(Graphics& gfx, std::string name);
 	virtual void OnInteract() override;
 	void shoot();
 private:

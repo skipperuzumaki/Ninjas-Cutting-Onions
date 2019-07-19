@@ -4,6 +4,7 @@
 #include <string>
 #include "Graphics.h"
 #include "Keyboard.h"
+#include "Interfaces.h"
 
 class Platform
 {
@@ -22,8 +23,9 @@ public:
 	int getid();
 private:
 	int id;
-	std::vector<Object> StaticObjects;
-	std::vector<Object> DynamicObjects;
+	std::vector<Object> Objects;
+	std::vector<Object*> DynamicObjects = { 0 };
+	std::vector<Object*> StaticObjects = { 0 };
 };
 
 class Level

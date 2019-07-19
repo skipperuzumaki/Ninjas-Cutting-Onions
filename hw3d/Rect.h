@@ -12,7 +12,11 @@ public:
 		Bottom = bottom;
 		Left = left;
 	}
-	bool intersectting(Rect& rhs)
+	bool inside(std::pair<float, float> point)
+	{
+	
+	}
+	bool intersecting(Rect& rhs)
 	{
 
 	}

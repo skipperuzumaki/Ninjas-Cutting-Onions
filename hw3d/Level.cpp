@@ -1,5 +1,4 @@
 #include "Level.h"
-#include "Interfaces.h"
 
 Platform::Platform(std::string filename)
 {
@@ -12,10 +11,10 @@ Platform::~Platform()
 void Platform::draw(Graphics& gfx)
 {
 	for (int i = 0; i < StaticObjects.size(); i++) {
-		StaticObjects.at(i).Draw(gfx);
+		StaticObjects.at(i)->Draw(gfx);
 	}
 	for (int i = 0; i < DynamicObjects.size(); i++) {
-		DynamicObjects.at(i).Draw(gfx);
+		DynamicObjects.at(i)->Draw(gfx);
 	}
 }
 
@@ -25,18 +24,21 @@ void Platform::update(float dt, Keyboard& kbd)
 	//using object.Translate and object.Rotate
 	//<imp> followed by a oject.update
 	for (int i = 0; i < StaticObjects.size(); i++) {
-		StaticObjects.at(i).rotate(dt);
+		StaticObjects.at(i)->rotate(dt);
 	}
 	for (int i = 0; i < StaticObjects.size(); i++) {
-		StaticObjects.at(i).update();
+		StaticObjects.at(i)->update();
 	}
 	for (int i = 0; i < DynamicObjects.size(); i++) {
 		bool touch = false;
 		for (int j = 0; j < StaticObjects.size(); j++) {
 			try {
-				if (StaticObjects.at(j).extent.intersecting(DynamicObjects.at(i).extent))
+				//might work might not
+				Catchable* cach = reinterpret_cast<Catchable*>(StaticObjects.at(j));
+				Throwable* thr = reinterpret_cast<Throwable*>(DynamicObjects.at(i));
+				if (cach->extent.intersecting(thr->extent))
 				{
-					StaticObjects.at(j).OnCatch(DynamicObjects.at(i));
+					cach->OnCatch(*thr);
 					touch = true;
 				}
 
@@ -45,7 +47,7 @@ void Platform::update(float dt, Keyboard& kbd)
 		}
 		if (!touch)
 		{
-			DynamicObjects.at(i).update();
+			DynamicObjects.at(i)->update();
 		}
 	}
 }

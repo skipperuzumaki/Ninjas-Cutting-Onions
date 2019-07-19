@@ -57,6 +57,7 @@ public:
 
 class Catchable
 {
+public:
 	Rect extent;
 	virtual void OnCatch(Throwable& thro) = 0;
 	~Catchable(){}

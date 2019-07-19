@@ -1,8 +1,8 @@
 #include "Turret.h"
 
-TurretAmmo::TurretAmmo(std::string name)
+TurretAmmo::TurretAmmo(Graphics& gfx, std::string name)
 	:
-	Object(std::string("Models/Sphere.obj"),true)
+	Object(gfx,std::string("Models/Sphere.obj"),true)
 {
 	_name = name;
 }
@@ -19,9 +19,9 @@ void TurretAmmo::Update()
 	pos.second = pos.second + velocity.second;
 }
 
-Turret::Turret(std::string name)
+Turret::Turret(Graphics& gfx, std::string name)
 	:
-	Object(std::string("Models/Turret.obj"), true)
+	Object(gfx,std::string("Models/Turret.obj"), true)
 {
 }
 
