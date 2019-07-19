@@ -101,3 +101,15 @@ class Chick_Peas : Ingredient
 {
 	int id = 23;
 };
+class Fish : Ingredient
+{
+	int id = 24;
+};
+class SeaWeed : Ingredient
+{
+	int id = 25;
+};
+class Octopus : Ingredient
+{
+	int id = 26;
+};
