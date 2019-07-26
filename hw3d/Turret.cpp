@@ -1,8 +1,9 @@
 #include "Turret.h"
+#include "Utils.h"
 
 TurretAmmo::TurretAmmo(Graphics& gfx, std::string name)
 	:
-	Object(gfx,std::string("Models/Sphere.obj"),true)
+	Object(gfx, Utils::make_vector(std::string("Models/sphere.obj")))
 {
 	_name = name;
 }
@@ -21,7 +22,7 @@ void TurretAmmo::Update()
 
 Turret::Turret(Graphics& gfx, std::string name)
 	:
-	Object(gfx,std::string("Models/Turret.obj"), true)
+	Object(gfx, Utils::make_vector(std::string("Models/Turret.obj")))
 {
 }
 

@@ -1,9 +1,11 @@
 #include "Object.h"
 
-Object::Object(Graphics& gfx, std::string filename, bool movable)
-	:
-	model(gfx,filename)
+Object::Object(Graphics& gfx, std::vector<std::string> filenames)
 {
+	n_mdels = filenames.size();
+	for (int i = 0; i < n_mdels; i++) {
+		models.push_back(Model(gfx, filenames.at(i)));
+	}
 }
 
 Object::~Object()
@@ -12,12 +14,28 @@ Object::~Object()
 
 void Object::Draw(Graphics& gfx)
 {
-	model.Draw(gfx, transformation);//Warning Transformation XMMATRIX to FXMMATRIX
+	models.at(curr).Draw(gfx, transformation);//Warning Transformation XMMATRIX to FXMMATRIX
 }
 
 void Object::update()
 {
 	transformation = rotationZ * translation * rotation;
+}
+
+void Object::advance()
+{
+	curr++;
+	if (curr == n_mdels) { curr = 0; }
+}
+
+void Object::frameto(int frame)
+{
+	if (frame < n_mdels) { curr = frame; }
+}
+
+int Object::currframe()
+{
+	return curr;
 }
 
 void Object::translate(float x, float y)

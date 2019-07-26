@@ -11,9 +11,11 @@ Platform::~Platform()
 void Platform::draw(Graphics& gfx)
 {
 	for (int i = 0; i < StaticObjects.size(); i++) {
+		StaticObjects.at(i)->advance();
 		StaticObjects.at(i)->Draw(gfx);
 	}
 	for (int i = 0; i < DynamicObjects.size(); i++) {
+		DynamicObjects.at(i)->advance();
 		DynamicObjects.at(i)->Draw(gfx);
 	}
 }
