@@ -1,119 +1,262 @@
 #pragma once
 #include "Interfaces.h"
+#include "Object.h"
+#include "Graphics.h"
+#include <string>
 
-class Onions : Ingredient
+std::vector<std::string> onion;
+class Onion : Ingredient, Object
 {
+	Onion(Graphics& gfx)
+		:
+		Object(gfx,onion)
+	{}
 	int id = 0;
 };
-class Tomato :Ingredient
+std::vector<std::string> tomato;
+class Tomato :Ingredient, Object
 {
+	Tomato(Graphics& gfx)
+		:
+		Object(gfx, tomato)
+	{}
 	int id = 1;
 };
-class Mushroom : Ingredient
+std::vector<std::string> mushroom;
+class Mushroom : Ingredient, Object
 {
+	Mushroom(Graphics& gfx)
+		:
+		Object(gfx, mushroom)
+	{}
 	int id = 2;
 };
-class Meat : Ingredient
+std::vector<std::string> meat;
+class Meat : Ingredient, Object
 {
+	Meat(Graphics& gfx)
+		:
+		Object(gfx, meat)
+	{}
 	int id = 3;
 };
-class Sausage : Ingredient
+std::vector<std::string> sausage;
+class Sausage : Ingredient, Object
 {
+	Sausage(Graphics& gfx)
+		:
+		Object(gfx, sausage)
+	{}
 	int id = 4;
 };
-class Marshmellow : Ingredient
+std::vector<std::string> marshmellow;
+class Marshmellow : Ingredient, Object
 {
+	Marshmellow(Graphics& gfx)
+		:
+		Object(gfx, marshmellow)
+	{}
 	int id = 5;
 };
-class Flour : Ingredient
+std::vector<std::string> flour;
+class Flour : Ingredient, Object
 {
+	Flour(Graphics& gfx)
+		:
+		Object(gfx, flour)
+	{}
 	int id = 6;
 };
-class Rice : Ingredient
+std::vector<std::string> rice;
+class Rice : Ingredient, Object
 {
+	Rice(Graphics& gfx)
+		:
+		Object(gfx, rice)
+	{}
 	int id = 7;
 };
-class Buns : Ingredient
+std::vector<std::string> buns;
+class Buns : Ingredient, Object
 {
+	Buns(Graphics& gfx)
+		:
+		Object(gfx, buns)
+	{}
 	int id = 8;
 };
-class Tortias : Ingredient
+std::vector<std::string> tortias;
+class Tortias : Ingredient, Object
 {
+	Tortias(Graphics& gfx)
+		:
+		Object(gfx, tortias)
+	{}
 	int id = 9;
 };
-class Bread : Ingredient
+std::vector<std::string> bread;
+class Bread : Ingredient, Object
 {
+	Bread(Graphics& gfx)
+		:
+		Object(gfx, bread)
+	{}
 	int id = 10;
 };
-class Cucumber : Ingredient
+std::vector<std::string> cucumber;
+class Cucumber : Ingredient, Object
 {
+	Cucumber(Graphics& gfx)
+		:
+		Object(gfx, cucumber)
+	{}
 	int id = 11;
 };
-class Lettuce : Ingredient
+std::vector<std::string> lettuce;
+class Lettuce : Ingredient, Object
 {
+	Lettuce(Graphics& gfx)
+		:
+		Object(gfx, lettuce)
+	{}
 	int id = 12;
 };
-class Pickels : Ingredient
+std::vector<std::string> pickels;
+class Pickels : Ingredient, Object
 {
+	Pickels(Graphics& gfx)
+		:
+		Object(gfx, pickels)
+	{}
 	int id = 13;
 };
-class Pizza_Base : Ingredient
+std::vector<std::string> pizza_base;
+class Pizza_Base : Ingredient, Object
 {
+	Pizza_Base(Graphics& gfx)
+		:
+		Object(gfx, pizza_base)
+	{}
 	int id = 13;
 };
-class Blueberry : Ingredient
+std::vector<std::string> blueberry;
+class Blueberry : Ingredient, Object
 {
+	Blueberry(Graphics& gfx)
+		:
+		Object(gfx, blueberry)
+	{}
 	int id = 14;
 };
-class Chocolate : Ingredient
+std::vector<std::string> chocolate;
+class Chocolate : Ingredient, Object
 {
+	Chocolate(Graphics& gfx)
+		:
+		Object(gfx, chocolate)
+	{}
 	int id = 15;
 };
-class Banana : Ingredient
+std::vector<std::string> banana;
+class Banana : Ingredient, Object
 {
+	Banana(Graphics& gfx)
+		:
+		Object(gfx, banana)
+	{}
 	int id = 16;
 };
-class Vanilla : Ingredient
+std::vector<std::string> vanilla;
+class Vanilla : Ingredient, Object
 {
+	Vanilla(Graphics& gfx)
+		:
+		Object(gfx, vanilla)
+	{}
 	int id = 17;
 };
-class Apple : Ingredient
+std::vector<std::string> apple;
+class Apple : Ingredient, Object
 {
+	Apple(Graphics& gfx)
+		:
+		Object(gfx, apple)
+	{}
 	int id = 18;
 };
-class Orange : Ingredient
+std::vector<std::string> orange;
+class Orange : Ingredient, Object
 {
+	Orange(Graphics& gfx)
+		:
+		Object(gfx, orange)
+	{}
 	int id = 19;
 };
-class Cheese : Ingredient
+std::vector<std::string> cheese;
+class Cheese : Ingredient, Object
 {
+	Cheese(Graphics& gfx)
+		:
+		Object(gfx, cheese)
+	{}
 	int id = 20;
 };
-class Olives : Ingredient
+std::vector<std::string> olives;
+class Olives : Ingredient, Object
 {
+	Olives(Graphics& gfx)
+		:
+		Object(gfx, olives)
+	{}
 	int id = 21;
 };
-class Egg : Ingredient
+std::vector<std::string> egg;
+class Egg : Ingredient, Object
 {
+	Egg(Graphics& gfx)
+		:
+		Object(gfx, egg)
+	{}
 	int id = 22;
 };
-class Chick_Peas : Ingredient
+std::vector<std::string> chick_peas;
+class Chick_Peas : Ingredient, Object
 {
+	Chick_Peas(Graphics& gfx)
+		:
+		Object(gfx, chick_peas)
+	{}
 	int id = 23;
 };
-class Fish : Ingredient
+std::vector<std::string> fish;
+class Fish : Ingredient, Object
 {
+	Fish(Graphics& gfx)
+		:
+		Object(gfx, fish)
+	{}
 	int id = 24;
 };
-class SeaWeed : Ingredient
+std::vector<std::string> seaweed;
+class SeaWeed : Ingredient, Object
 {
+	SeaWeed(Graphics& gfx)
+		:
+		Object(gfx, seaweed)
+	{}
 	int id = 25;
 };
-class Octopus : Ingredient
+std::vector<std::string> octopus;
+class Octopus : Ingredient, Object
 {
+	Octopus(Graphics& gfx)
+		:
+		Object(gfx, octopus)
+	{}
 	int id = 26;
 };
-class Unviable : Ingredient
+class Unviable : Ingredient, Object
 {
 	int id = std::numeric_limits<int>::max();
 };
