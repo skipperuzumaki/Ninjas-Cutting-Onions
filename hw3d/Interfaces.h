@@ -48,6 +48,7 @@ public:
 	bool Cooked = false;
 	bool Ground = false;
 	bool Chopped = false;
+	bool Grilled = false;
 	~Dish(){}
 };
 
