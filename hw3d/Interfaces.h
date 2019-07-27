@@ -40,10 +40,14 @@ public:
 class Dish
 {
 public:
+	//TODO add appliance specific cooked
 	std::vector<Ingredient> Ingredents;
 	virtual bool add(Dish&) = 0;
 	virtual bool add(Ingredient&) = 0;
 	virtual std::vector<Ingredient> show() = 0;
+	bool Cooked = false;
+	bool Ground = false;
+	bool Chopped = false;
 	~Dish(){}
 };
 

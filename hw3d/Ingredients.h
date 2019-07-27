@@ -4,6 +4,8 @@
 #include "Graphics.h"
 #include <string>
 
+//TODO Add sprites for cue cards
+
 std::vector<std::string> onion;
 class Onion : Ingredient, Object
 {
