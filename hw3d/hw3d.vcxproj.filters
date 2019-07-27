@@ -341,6 +341,9 @@
     <ClInclude Include="Utils.h">
       <Filter>GameFiles\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Dishes.h">
+      <Filter>GameFiles\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="hw3d.rc">

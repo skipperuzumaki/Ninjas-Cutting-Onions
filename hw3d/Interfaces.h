@@ -41,6 +41,13 @@ class Dish
 {
 public:
 	//TODO add appliance specific cooked
+	int id;
+	bool operator ==(Dish& rhs) {
+		if (rhs.id == id) {
+			return true;
+		}
+		else { return false; }
+	}
 	std::vector<Ingredient> Ingredents;
 	virtual bool add(Dish&) = 0;
 	virtual bool add(Ingredient&) = 0;

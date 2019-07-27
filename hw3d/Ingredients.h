@@ -258,6 +258,15 @@ class Octopus : Ingredient, Object
 	{}
 	int id = 26;
 };
+std::vector<std::string> milk;
+class Milk : Ingredient, Object
+{
+	Milk(Graphics& gfx)
+		:
+		Object(gfx, milk)
+	{}
+	int id = 26;
+};
 class Unviable : Ingredient, Object
 {
 	int id = std::numeric_limits<int>::max();
