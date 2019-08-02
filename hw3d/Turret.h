@@ -17,6 +17,46 @@ private:
 	std::pair<float, float> pos;
 };
 
+class Water : TurretAmmo
+{
+public:
+	Water(Graphics& gfx)
+		:
+		TurretAmmo(gfx,std::string("Water"))
+	{}
+	static const int id = 27;
+};
+
+class Ketchup : TurretAmmo
+{
+public:
+	Ketchup(Graphics& gfx)
+		:
+		TurretAmmo(gfx, std::string("Ketchup"))
+	{}
+	static const int id = 28;
+};
+
+class Mayonaise : TurretAmmo
+{
+public:
+	Mayonaise(Graphics& gfx)
+		:
+		TurretAmmo(gfx, std::string("Mayonaise"))
+	{}
+	static const int id = 29;
+};
+
+class Milk : TurretAmmo
+{
+public:
+	Milk(Graphics& gfx)
+		:
+		TurretAmmo(gfx, std::string("Milk"))
+	{}
+	static const int id = 29;
+};
+
 class Turret : Object,SpawnBlock,Interactible
 {
 public:

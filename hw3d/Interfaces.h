@@ -33,7 +33,7 @@ public:
 class Ingredient
 {
 public:
-	int id;
+	static const int id;
 	~Ingredient(){}
 };
 

@@ -9,265 +9,295 @@
 std::vector<std::string> onion;
 class Onion : Ingredient, Object
 {
+public:
 	Onion(Graphics& gfx)
 		:
 		Object(gfx,onion)
 	{}
-	int id = 0;
+	static const int id = 0;
 };
 std::vector<std::string> tomato;
 class Tomato :Ingredient, Object
 {
+public:
 	Tomato(Graphics& gfx)
 		:
 		Object(gfx, tomato)
 	{}
-	int id = 1;
+	static const int id = 1;
 };
 std::vector<std::string> mushroom;
 class Mushroom : Ingredient, Object
 {
+public:
 	Mushroom(Graphics& gfx)
 		:
 		Object(gfx, mushroom)
 	{}
-	int id = 2;
+	static const int id = 2;
 };
 std::vector<std::string> meat;
 class Meat : Ingredient, Object
 {
+public:
 	Meat(Graphics& gfx)
 		:
 		Object(gfx, meat)
 	{}
-	int id = 3;
+	static const int id = 3;
 };
 std::vector<std::string> sausage;
 class Sausage : Ingredient, Object
 {
+public:
 	Sausage(Graphics& gfx)
 		:
 		Object(gfx, sausage)
 	{}
-	int id = 4;
+	static const int id = 4;
 };
 std::vector<std::string> marshmellow;
 class Marshmellow : Ingredient, Object
 {
+public:
 	Marshmellow(Graphics& gfx)
 		:
 		Object(gfx, marshmellow)
 	{}
-	int id = 5;
+	static const int id = 5;
 };
 std::vector<std::string> flour;
 class Flour : Ingredient, Object
 {
+public:
 	Flour(Graphics& gfx)
 		:
 		Object(gfx, flour)
 	{}
-	int id = 6;
+	static const int id = 6;
 };
 std::vector<std::string> rice;
 class Rice : Ingredient, Object
 {
+public:
 	Rice(Graphics& gfx)
 		:
 		Object(gfx, rice)
 	{}
-	int id = 7;
+	static const int id = 7;
 };
 std::vector<std::string> buns;
 class Buns : Ingredient, Object
 {
+public:
 	Buns(Graphics& gfx)
 		:
 		Object(gfx, buns)
 	{}
-	int id = 8;
+	static const int id = 8;
 };
 std::vector<std::string> tortias;
 class Tortias : Ingredient, Object
 {
+public:
 	Tortias(Graphics& gfx)
 		:
 		Object(gfx, tortias)
 	{}
-	int id = 9;
+	static const int id = 9;
 };
 std::vector<std::string> bread;
 class Bread : Ingredient, Object
 {
+public:
 	Bread(Graphics& gfx)
 		:
 		Object(gfx, bread)
 	{}
-	int id = 10;
+	static const int id = 10;
 };
 std::vector<std::string> cucumber;
 class Cucumber : Ingredient, Object
 {
+public:
 	Cucumber(Graphics& gfx)
 		:
 		Object(gfx, cucumber)
 	{}
-	int id = 11;
+	static const int id = 11;
 };
 std::vector<std::string> lettuce;
 class Lettuce : Ingredient, Object
 {
+public:
 	Lettuce(Graphics& gfx)
 		:
 		Object(gfx, lettuce)
 	{}
-	int id = 12;
+	static const int id = 12;
 };
 std::vector<std::string> pickels;
 class Pickels : Ingredient, Object
 {
+public:
 	Pickels(Graphics& gfx)
 		:
 		Object(gfx, pickels)
 	{}
-	int id = 13;
+	static const int id = 13;
 };
 std::vector<std::string> pizza_base;
 class Pizza_Base : Ingredient, Object
 {
+public:
 	Pizza_Base(Graphics& gfx)
 		:
 		Object(gfx, pizza_base)
 	{}
-	int id = 13;
+	static const int id = 13;
 };
 std::vector<std::string> blueberry;
 class Blueberry : Ingredient, Object
 {
+public:
 	Blueberry(Graphics& gfx)
 		:
 		Object(gfx, blueberry)
 	{}
-	int id = 14;
+	static const int id = 14;
 };
 std::vector<std::string> chocolate;
 class Chocolate : Ingredient, Object
 {
+public:
 	Chocolate(Graphics& gfx)
 		:
 		Object(gfx, chocolate)
 	{}
-	int id = 15;
+	static const int id = 15;
 };
 std::vector<std::string> banana;
 class Banana : Ingredient, Object
 {
+public:
 	Banana(Graphics& gfx)
 		:
 		Object(gfx, banana)
 	{}
-	int id = 16;
+	static const int id = 16;
 };
 std::vector<std::string> vanilla;
 class Vanilla : Ingredient, Object
 {
+public:
 	Vanilla(Graphics& gfx)
 		:
 		Object(gfx, vanilla)
 	{}
-	int id = 17;
+	static const int id = 17;
 };
 std::vector<std::string> apple;
 class Apple : Ingredient, Object
 {
+public:
 	Apple(Graphics& gfx)
 		:
 		Object(gfx, apple)
 	{}
-	int id = 18;
+	static const int id = 18;
 };
 std::vector<std::string> orange;
 class Orange : Ingredient, Object
 {
+public:
 	Orange(Graphics& gfx)
 		:
 		Object(gfx, orange)
 	{}
-	int id = 19;
+	static const int id = 19;
 };
 std::vector<std::string> cheese;
 class Cheese : Ingredient, Object
 {
+public:
 	Cheese(Graphics& gfx)
 		:
 		Object(gfx, cheese)
 	{}
-	int id = 20;
+	static const int id = 20;
 };
 std::vector<std::string> olives;
 class Olives : Ingredient, Object
 {
+public:
 	Olives(Graphics& gfx)
 		:
 		Object(gfx, olives)
 	{}
-	int id = 21;
+	static const int id = 21;
 };
 std::vector<std::string> egg;
 class Egg : Ingredient, Object
 {
+public:
 	Egg(Graphics& gfx)
 		:
 		Object(gfx, egg)
 	{}
-	int id = 22;
+	static const int id = 22;
 };
 std::vector<std::string> chick_peas;
 class Chick_Peas : Ingredient, Object
 {
+public:
 	Chick_Peas(Graphics& gfx)
 		:
 		Object(gfx, chick_peas)
 	{}
-	int id = 23;
+	static const int id = 23;
 };
 std::vector<std::string> fish;
 class Fish : Ingredient, Object
 {
+public:
 	Fish(Graphics& gfx)
 		:
 		Object(gfx, fish)
 	{}
-	int id = 24;
+	static const int id = 24;
 };
 std::vector<std::string> seaweed;
 class SeaWeed : Ingredient, Object
 {
+public:
 	SeaWeed(Graphics& gfx)
 		:
 		Object(gfx, seaweed)
 	{}
-	int id = 25;
+	static const int id = 25;
 };
 std::vector<std::string> octopus;
 class Octopus : Ingredient, Object
 {
+public:
 	Octopus(Graphics& gfx)
 		:
 		Object(gfx, octopus)
 	{}
-	int id = 26;
+	static const int id = 26;
 };
 std::vector<std::string> milk;
 class Milk : Ingredient, Object
 {
+public:
 	Milk(Graphics& gfx)
 		:
 		Object(gfx, milk)
 	{}
-	int id = 26;
+	static const int id = 26;
 };
 class Unviable : Ingredient, Object
 {
-	int id = std::numeric_limits<int>::max();
+public:
+	static const int id = std::numeric_limits<int>::max();
 };
