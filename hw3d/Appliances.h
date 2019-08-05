@@ -8,14 +8,14 @@
 #include "Ingredients.h"
 #include "Dishes.h"
 
-//TODO add moodels and ingredients and dishes
+//TODO add models and ingredients and dishes
+//TODO remove that wierd system of declaing vectors beforehand and use Utils::make_vector
 
-std::vector<std::string> stove;
 class Stove : Container, Object
 {
 	Stove(Graphics& gfx)
 		:
-		Object(gfx,stove)
+		Object(gfx,Utils::make_vector<std::string>(3,std::string("a.h"),std::string("b,h"),std::string("c.h")))
 	{}
 	static std::vector<int > Viable_Dishes;//TODO add viable dishes
 	static std::vector<int > Viable_Ingredients;//TODO add viable ingredients

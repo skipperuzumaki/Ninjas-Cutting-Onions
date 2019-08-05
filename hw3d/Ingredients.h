@@ -5,14 +5,13 @@
 #include <string>
 
 //TODO Add sprites for cue cards
-
-std::vector<std::string> onion;
+//TODO use Utils::make_vector ike in onion
 class Onion : Ingredient, Object
 {
 public:
 	Onion(Graphics& gfx)
 		:
-		Object(gfx,onion)
+		Object(gfx, Utils::make_vector<std::string>(3, std::string("a.h"), std::string("b,h"), std::string("c.h")))
 	{}
 	static const int id = 0;
 };
