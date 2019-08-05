@@ -16,13 +16,29 @@ class Onion_Soup :Dish
 		auto temp = rhs.show();
 		for (int i = 0; i < temp.size(); i++) {
 			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
-				Ingredents.push_back(temp.at(i));
+				switch(temp.at(i).id)
+				{
+				case Onion::id:
+					if (temp.at(i).Chopped == true) { Ingredents.push_back(temp.at(i)); }
+					break;
+				case Water::id:
+					Ingredents.push_back(temp.at(i));
+					break;
+				}
 			}
 		}
 	}
 	virtual bool add(Ingredient& rhs) override {
 		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
-			Ingredents.push_back(rhs);
+			switch (rhs.id)
+			{
+			case Onion::id:
+				if (rhs.Chopped == true) { Ingredents.push_back(rhs); }
+				break;
+			case Water::id:
+				Ingredents.push_back(rhs);
+				break;
+			}
 		}
 	}
 	virtual std::vector<Ingredient> show() override {
@@ -39,13 +55,29 @@ class Mushroom_Soup :Dish
 		auto temp = rhs.show();
 		for (int i = 0; i < temp.size(); i++) {
 			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
-				Ingredents.push_back(temp.at(i));
+				switch (temp.at(i).id)
+				{
+				case Mushroom::id:
+					if (temp.at(i).Chopped == true) { Ingredents.push_back(temp.at(i)); }
+					break;
+				case Water::id:
+					Ingredents.push_back(temp.at(i));
+					break;
+				}
 			}
 		}
 	}
 	virtual bool add(Ingredient& rhs) override {
 		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
-			Ingredents.push_back(rhs);
+			switch (rhs.id)
+			{
+			case Mushroom::id:
+				if (rhs.Chopped == true) { Ingredents.push_back(rhs); }
+				break;
+			case Water::id:
+				Ingredents.push_back(rhs);
+				break;
+			}
 		}
 	}
 	virtual std::vector<Ingredient> show() override {
@@ -62,13 +94,29 @@ class Tomato_Soup :Dish
 		auto temp = rhs.show();
 		for (int i = 0; i < temp.size(); i++) {
 			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
-				Ingredents.push_back(temp.at(i));
+				switch (temp.at(i).id)
+				{
+				case Tomato::id:
+					if (temp.at(i).Chopped == true) { Ingredents.push_back(temp.at(i)); }
+					break;
+				case Water::id:
+					Ingredents.push_back(temp.at(i));
+					break;
+				}
 			}
 		}
 	}
 	virtual bool add(Ingredient& rhs) override {
 		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
-			Ingredents.push_back(rhs);
+			switch (rhs.id)
+			{
+			case Tomato::id:
+				if (rhs.Chopped == true) { Ingredents.push_back(rhs); }
+				break;
+			case Water::id:
+				Ingredents.push_back(rhs);
+				break;
+			}
 		}
 	}
 	virtual std::vector<Ingredient> show() override {
@@ -131,13 +179,29 @@ class Banana_Milkshake :Dish
 		auto temp = rhs.show();
 		for (int i = 0; i < temp.size(); i++) {
 			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
-				Ingredents.push_back(temp.at(i));
+				switch (temp.at(i).id)
+				{
+				case Banana::id:
+					if (temp.at(i).Chopped == true) { Ingredents.push_back(temp.at(i)); }
+					break;
+				case Milk::id:
+					Ingredents.push_back(temp.at(i));
+					break;
+				}
 			}
 		}
 	}
 	virtual bool add(Ingredient& rhs) override {
 		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
-			Ingredents.push_back(rhs);
+			switch (rhs.id)
+			{
+			case Banana::id:
+				if (rhs.Chopped == true) { Ingredents.push_back(rhs); }
+				break;
+			case Milk::id:
+				Ingredents.push_back(rhs);
+				break;
+			}
 		}
 	}
 	virtual std::vector<Ingredient> show() override {
@@ -177,13 +241,35 @@ class Onion_Pizza :Dish
 		auto temp = rhs.show();
 		for (int i = 0; i < temp.size(); i++) {
 			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
-				Ingredents.push_back(temp.at(i));
+				switch (temp.at(i).id)
+				{
+				case Onion::id:
+					if (temp.at(i).Chopped == true) { Ingredents.push_back(temp.at(i)); }
+					break;
+				case Cheese::id:
+					if (temp.at(i).Chopped == true) { Ingredents.push_back(temp.at(i)); }
+					break;
+				case Pizza_Base::id:
+					Ingredents.push_back(temp.at(i));
+					break;
+				}
 			}
 		}
 	}
 	virtual bool add(Ingredient& rhs) override {
 		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
-			Ingredents.push_back(rhs);
+			switch (rhs.id)
+			{
+			case Onion::id:
+				if (rhs.Chopped == true) { Ingredents.push_back(rhs); }
+				break;
+			case Cheese::id:
+				if (rhs.Chopped == true) { Ingredents.push_back(rhs); }
+				break;
+			case Pizza_Base::id:
+				Ingredents.push_back(rhs);
+				break;
+			}
 		}
 	}
 	virtual std::vector<Ingredient> show() override {
@@ -200,13 +286,35 @@ class Olive_Pizza :Dish
 		auto temp = rhs.show();
 		for (int i = 0; i < temp.size(); i++) {
 			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
-				Ingredents.push_back(temp.at(i));
+				switch (temp.at(i).id)
+				{
+				case Olives::id:
+					if (temp.at(i).Chopped == true) { Ingredents.push_back(temp.at(i)); }
+					break;
+				case Cheese::id:
+					if (temp.at(i).Chopped == true) { Ingredents.push_back(temp.at(i)); }
+					break;
+				case Pizza_Base::id:
+					Ingredents.push_back(temp.at(i));
+					break;
+				}
 			}
 		}
 	}
 	virtual bool add(Ingredient& rhs) override {
 		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
-			Ingredents.push_back(rhs);
+			switch (rhs.id)
+			{
+			case Olives::id:
+				if (rhs.Chopped == true) { Ingredents.push_back(rhs); }
+				break;
+			case Cheese::id:
+				if (rhs.Chopped == true) { Ingredents.push_back(rhs); }
+				break;
+			case Pizza_Base::id:
+				Ingredents.push_back(rhs);
+				break;
+			}
 		}
 	}
 	virtual std::vector<Ingredient> show() override {
@@ -223,13 +331,35 @@ class Mushroom_Pizza :Dish
 		auto temp = rhs.show();
 		for (int i = 0; i < temp.size(); i++) {
 			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
-				Ingredents.push_back(temp.at(i));
+				switch (temp.at(i).id)
+				{
+				case Mushroom::id:
+					if (temp.at(i).Chopped == true) { Ingredents.push_back(temp.at(i)); }
+					break;
+				case Cheese::id:
+					if (temp.at(i).Chopped == true) { Ingredents.push_back(temp.at(i)); }
+					break;
+				case Pizza_Base::id:
+					Ingredents.push_back(temp.at(i));
+					break;
+				}
 			}
 		}
 	}
 	virtual bool add(Ingredient& rhs) override {
 		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
-			Ingredents.push_back(rhs);
+			switch (rhs.id)
+			{
+			case Mushroom::id:
+				if (rhs.Chopped == true) { Ingredents.push_back(rhs); }
+				break;
+			case Cheese::id:
+				if (rhs.Chopped == true) { Ingredents.push_back(rhs); }
+				break;
+			case Pizza_Base::id:
+				Ingredents.push_back(rhs);
+				break;
+			}
 		}
 	}
 	virtual std::vector<Ingredient> show() override {
@@ -586,6 +716,190 @@ class Apple_Pie :Dish
 {
 	Apple_Pie() { id = 24; }
 	const std::vector<int> Needed = { Apple::id,Vanilla::id,Flour::id,Milk::id };
+	virtual bool add(Dish& rhs) override {
+		bool retval = true;
+		auto temp = rhs.show();
+		for (int i = 0; i < temp.size(); i++) {
+			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
+				Ingredents.push_back(temp.at(i));
+			}
+		}
+	}
+	virtual bool add(Ingredient& rhs) override {
+		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
+			Ingredents.push_back(rhs);
+		}
+	}
+	virtual std::vector<Ingredient> show() override {
+		return Ingredents;//may cause problems (will cause problems in python but maybe not here)
+	}
+};
+
+class Vanilla_Pie :Dish
+{
+	Vanilla_Pie() { id = 25; }
+	const std::vector<int> Needed = { Vanilla::id,Flour::id,Milk::id };
+	virtual bool add(Dish& rhs) override {
+		bool retval = true;
+		auto temp = rhs.show();
+		for (int i = 0; i < temp.size(); i++) {
+			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
+				Ingredents.push_back(temp.at(i));
+			}
+		}
+	}
+	virtual bool add(Ingredient& rhs) override {
+		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
+			Ingredents.push_back(rhs);
+		}
+	}
+	virtual std::vector<Ingredient> show() override {
+		return Ingredents;//may cause problems (will cause problems in python but maybe not here)
+	}
+};
+
+class Marshmellow_Pie :Dish
+{
+	Marshmellow_Pie() { id = 26; }
+	const std::vector<int> Needed = { Marshmellow::id,Vanilla::id,Flour::id,Milk::id };
+	virtual bool add(Dish& rhs) override {
+		bool retval = true;
+		auto temp = rhs.show();
+		for (int i = 0; i < temp.size(); i++) {
+			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
+				Ingredents.push_back(temp.at(i));
+			}
+		}
+	}
+	virtual bool add(Ingredient& rhs) override {
+		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
+			Ingredents.push_back(rhs);
+		}
+	}
+	virtual std::vector<Ingredient> show() override {
+		return Ingredents;//may cause problems (will cause problems in python but maybe not here)
+	}
+};
+
+class Banana_Pie :Dish
+{
+	Banana_Pie() { id = 27; }
+	const std::vector<int> Needed = { Banana::id,Vanilla::id,Flour::id,Milk::id };
+	virtual bool add(Dish& rhs) override {
+		bool retval = true;
+		auto temp = rhs.show();
+		for (int i = 0; i < temp.size(); i++) {
+			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
+				Ingredents.push_back(temp.at(i));
+			}
+		}
+	}
+	virtual bool add(Ingredient& rhs) override {
+		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
+			Ingredents.push_back(rhs);
+		}
+	}
+	virtual std::vector<Ingredient> show() override {
+		return Ingredents;//may cause problems (will cause problems in python but maybe not here)
+	}
+};
+
+class Vanilla_Muffin :Dish
+{
+	Vanilla_Muffin() { id = 28; }
+	const std::vector<int> Needed = { Vanilla::id,Flour::id,Milk::id,Egg::id };
+	virtual bool add(Dish& rhs) override {
+		bool retval = true;
+		auto temp = rhs.show();
+		for (int i = 0; i < temp.size(); i++) {
+			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
+				Ingredents.push_back(temp.at(i));
+			}
+		}
+	}
+	virtual bool add(Ingredient& rhs) override {
+		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
+			Ingredents.push_back(rhs);
+		}
+	}
+	virtual std::vector<Ingredient> show() override {
+		return Ingredents;//may cause problems (will cause problems in python but maybe not here)
+	}
+};
+
+class Blueberry_Muffin :Dish
+{
+	Blueberry_Muffin() { id = 29; }
+	const std::vector<int> Needed = { Blueberry::id,Vanilla::id,Flour::id,Milk::id,Egg::id };
+	virtual bool add(Dish& rhs) override {
+		bool retval = true;
+		auto temp = rhs.show();
+		for (int i = 0; i < temp.size(); i++) {
+			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
+				Ingredents.push_back(temp.at(i));
+			}
+		}
+	}
+	virtual bool add(Ingredient& rhs) override {
+		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
+			Ingredents.push_back(rhs);
+		}
+	}
+	virtual std::vector<Ingredient> show() override {
+		return Ingredents;//may cause problems (will cause problems in python but maybe not here)
+	}
+};
+
+class Chocolate_Muffin :Dish
+{
+	Chocolate_Muffin() { id = 30; }
+	const std::vector<int> Needed = { Chocolate::id,Vanilla::id,Flour::id,Milk::id,Egg::id };
+	virtual bool add(Dish& rhs) override {
+		bool retval = true;
+		auto temp = rhs.show();
+		for (int i = 0; i < temp.size(); i++) {
+			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
+				Ingredents.push_back(temp.at(i));
+			}
+		}
+	}
+	virtual bool add(Ingredient& rhs) override {
+		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
+			Ingredents.push_back(rhs);
+		}
+	}
+	virtual std::vector<Ingredient> show() override {
+		return Ingredents;//may cause problems (will cause problems in python but maybe not here)
+	}
+};
+
+class Apple_Juice :Dish
+{
+	Apple_Juice() { id = 31; }
+	const std::vector<int> Needed = { Apple::id,Water::id };
+	virtual bool add(Dish& rhs) override {
+		bool retval = true;
+		auto temp = rhs.show();
+		for (int i = 0; i < temp.size(); i++) {
+			if (Utils::has(Needed, temp.at(i).id) && (!(Utils::has(Ingredents, temp.at(i))))) {
+				Ingredents.push_back(temp.at(i));
+			}
+		}
+	}
+	virtual bool add(Ingredient& rhs) override {
+		if (Utils::has(Needed, rhs.id) && (!(Utils::has(Ingredents, rhs)))) {
+			Ingredents.push_back(rhs);
+		}
+	}
+	virtual std::vector<Ingredient> show() override {
+		return Ingredents;//may cause problems (will cause problems in python but maybe not here)
+	}
+};
+
+class Orange_Juice :Dish
+{
+	Orange_Juice() { id = 31; }
+	const std::vector<int> Needed = { Orange::id,Water::id };
 	virtual bool add(Dish& rhs) override {
 		bool retval = true;
 		auto temp = rhs.show();

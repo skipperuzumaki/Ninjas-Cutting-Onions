@@ -6,12 +6,14 @@
 class SpawnBlock
 {
 public:
+	static const int identifier = 0;
 	~SpawnBlock(){}
 };
 
 class Interactible
 {
 public:
+	static const int identifier = 1;
 	virtual void OnInteract() = 0;
 	~Interactible(){}
 };
@@ -19,12 +21,14 @@ public:
 class Pickable
 {
 public:
+	static const int identifier = 2;
 	~Pickable(){}
 };
 
 class Throwable
 {
 public:
+	static const int identifier = 3;
 	Rect extent;
 	virtual void OnThrow(std::pair<float, float> start, std::pair<float, float> end) = 0;
 	~Throwable(){}
@@ -33,6 +37,11 @@ public:
 class Ingredient
 {
 public:
+	static const int identifier = 4;
+	bool Cooked = false;
+	bool Ground = false;
+	bool Chopped = false;
+	bool Grilled = false;
 	static const int id;
 	~Ingredient(){}
 };
@@ -40,6 +49,7 @@ public:
 class Dish
 {
 public:
+	static const int identifier = 5;
 	//TODO add appliance specific cooked
 	int id;
 	bool operator ==(Dish& rhs) {
@@ -62,6 +72,7 @@ public:
 class Container
 {
 public:
+	static const int identifier = 6;
 	bool Cooked;
 	virtual void Accept(Dish* ingredient) = 0;
 	virtual void Process() = 0;
@@ -72,6 +83,7 @@ public:
 class Catchable
 {
 public:
+	static const int identifier = 7;
 	Rect extent;
 	virtual void OnCatch(Throwable& thro) = 0;
 	~Catchable(){}
