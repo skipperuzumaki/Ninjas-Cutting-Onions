@@ -4,8 +4,9 @@
 #include <string>
 #include <vector>
 #include "Graphics.h"
+#include "Utils.h"
 
-//TODO add appliance specific cooked
+//TODO complete bassed on stove
 
 std::vector<std::string> stove;
 class Stove : Container, Object
@@ -14,33 +15,35 @@ class Stove : Container, Object
 		:
 		Object(gfx,stove)
 	{}
-	static std::vector<int > Viable_Stuff;///TODO add viable ingredients and dishes
-	Dish* Curritem;
-	virtual void Accept(Dish* ingredient) override
+	static std::vector<int > Viable_Dishes;//TODO add viable dishes
+	static std::vector<int > Viable_Ingredients;//TODO add viable ingredients
+	Dish* Curritem = nullptr;
+	Ingredient* Curring = nullptr;
+	virtual void Accept(Dish* rhs) override
 	{
-		Curritem = ingredient;
-		Process();
+		if (Utils::has(Viable_Dishes, rhs->id)) {
+			Curritem = rhs;
+			Curring = nullptr;
+			Process();
+		}
+	}
+	virtual void Accept(Ingredient* rhs) override
+	{
+		if (Utils::has(Viable_Ingredients, rhs->id)) {
+			Curring = rhs;
+			Curritem = nullptr;
+			Process();
+		}
 	}
 	virtual void Process() override
 	{
-		bool Spoiled = true;
-		auto ings = Curritem->show();
-		for (int i = 0; i < ings.size(); i++) {
-			auto id = ings.at(i).id;
-			bool Problem = true;
-			for (int j = 0; j < Viable_Stuff.size(); j++) {
-				if (Viable_Stuff.at(j) == id) {
-					Problem = false;
-				}
-			}
-			if (Problem) { Spoiled = true; }
-		}
 		Curritem->Cooked = true;
-		//TODO add spoiled food
+		Curring->Cooked = true;
+		//TODO add timer
 	}
-	virtual Dish* Unload() override
+	virtual std::pair<Dish*, Ingredient*> Unload() override
 	{
-		return Curritem;
+		return std::make_pair<>(Curritem, Curring);
 	}
 };
 std::vector<std::string> oven;
@@ -50,29 +53,30 @@ class Oven : Container, Object
 		:
 		Object(gfx, oven)
 	{}
-	static std::vector<int > Viable_Stuff;///TODO add viable ingredients and dishes
-	Dish* Curritem;
-	virtual void Accept(Dish* ingredient) override
+	static std::vector<int > Viable_Dishes;//TODO add viable dishes
+	static std::vector<int > Viable_Ingredients;//TODO add viable ingredients
+	Dish* Curritem = nullptr;
+	Ingredient* Curring = nullptr;
+	virtual void Accept(Dish* rhs) override
 	{
-		Curritem = ingredient;
-		Process();
+		if (Utils::has(Viable_Dishes, rhs->id)) {
+			Curritem = rhs;
+			Curring = nullptr;
+			Process();
+		}
+	}
+	virtual void Accept(Ingredient* rhs) override
+	{
+		if (Utils::has(Viable_Ingredients, rhs->id)) {
+			Curring = rhs;
+			Curritem = nullptr;
+			Process();
+		}
 	}
 	virtual void Process() override
 	{
-		bool Spoiled = true;
-		auto ings = Curritem->show();
-		for (int i = 0; i < ings.size(); i++) {
-			auto id = ings.at(i).id;
-			bool Problem = true;
-			for (int j = 0; j < Viable_Stuff.size(); j++) {
-				if (Viable_Stuff.at(j) == id) {
-					Problem = false;
-				}
-			}
-			if (Problem) { Spoiled = true; }
-		}
-		Curritem->Cooked = true;
-		//TODO add spoiled food
+		Curritem->Baked = true;
+		//TODO add timer
 	}
 	virtual Dish* Unload() override
 	{
@@ -86,29 +90,30 @@ class Steamer : Container, Object
 		:
 		Object(gfx, steamer)
 	{}
-	static std::vector<int > Viable_Stuff;///TODO add viable ingredients and dishes
-	Dish* Curritem;
-	virtual void Accept(Dish* ingredient) override
+	static std::vector<int > Viable_Dishes;//TODO add viable dishes
+	static std::vector<int > Viable_Ingredients;//TODO add viable ingredients
+	Dish* Curritem = nullptr;
+	Ingredient* Curring = nullptr;
+	virtual void Accept(Dish* rhs) override
 	{
-		Curritem = ingredient;
-		Process();
+		if (Utils::has(Viable_Dishes, rhs->id)) {
+			Curritem = rhs;
+			Curring = nullptr;
+			Process();
+		}
+	}
+	virtual void Accept(Ingredient* rhs) override
+	{
+		if (Utils::has(Viable_Ingredients, rhs->id)) {
+			Curring = rhs;
+			Curritem = nullptr;
+			Process();
+		}
 	}
 	virtual void Process() override
 	{
-		bool Spoiled = true;
-		auto ings = Curritem->show();
-		for (int i = 0; i < ings.size(); i++) {
-			auto id = ings.at(i).id;
-			bool Problem = true;
-			for (int j = 0; j < Viable_Stuff.size(); j++) {
-				if (Viable_Stuff.at(j) == id) {
-					Problem = false;
-				}
-			}
-			if (Problem) { Spoiled = true; }
-		}
-		Curritem->Cooked = true;
-		//TODO add spoiled food
+		Curritem->Steamed = true;
+		//TODO add timer
 	}
 	virtual Dish* Unload() override
 	{
@@ -122,29 +127,30 @@ class Grinder : Container, Object
 		:
 		Object(gfx, grinder)
 	{}
-	static std::vector<int > Viable_Stuff;///TODO add viable ingredients and dishes
-	Dish* Curritem;
-	virtual void Accept(Dish* ingredient) override
+	static std::vector<int > Viable_Dishes;//TODO add viable dishes
+	static std::vector<int > Viable_Ingredients;//TODO add viable ingredients
+	Dish* Curritem = nullptr;
+	Ingredient* Curring = nullptr;
+	virtual void Accept(Dish* rhs) override
 	{
-		Curritem = ingredient;
-		Process();
+		if (Utils::has(Viable_Dishes, rhs->id)) {
+			Curritem = rhs;
+			Curring = nullptr;
+			Process();
+		}
+	}
+	virtual void Accept(Ingredient* rhs) override
+	{
+		if (Utils::has(Viable_Ingredients, rhs->id)) {
+			Curring = rhs;
+			Curritem = nullptr;
+			Process();
+		}
 	}
 	virtual void Process() override
 	{
-		bool Spoiled = true;
-		auto ings = Curritem->show();
-		for (int i = 0; i < ings.size(); i++) {
-			auto id = ings.at(i).id;
-			bool Problem = true;
-			for (int j = 0; j < Viable_Stuff.size(); j++) {
-				if (Viable_Stuff.at(j) == id) {
-					Problem = false;
-				}
-			}
-			if (Problem) { Spoiled = true; }
-		}
 		Curritem->Ground = true;
-		//TODO add spoiled food
+		//TODO add timer
 	}
 	virtual Dish* Unload() override
 	{
@@ -158,29 +164,30 @@ class Lawn_Mower : Container, Object
 		:
 		Object(gfx, lawn_mower)
 	{}
-	static std::vector<int > Viable_Stuff;///TODO add viable ingredients and dishes
-	Dish* Curritem;
-	virtual void Accept(Dish* ingredient) override
+	static std::vector<int > Viable_Dishes;//TODO add viable dishes
+	static std::vector<int > Viable_Ingredients;//TODO add viable ingredients
+	Dish* Curritem = nullptr;
+	Ingredient* Curring = nullptr;
+	virtual void Accept(Dish* rhs) override
 	{
-		Curritem = ingredient;
-		Process();
+		if (Utils::has(Viable_Dishes, rhs->id)) {
+			Curritem = rhs;
+			Curring = nullptr;
+			Process();
+		}
+	}
+	virtual void Accept(Ingredient* rhs) override
+	{
+		if (Utils::has(Viable_Ingredients, rhs->id)) {
+			Curring = rhs;
+			Curritem = nullptr;
+			Process();
+		}
 	}
 	virtual void Process() override
 	{
-		bool Spoiled = true;
-		auto ings = Curritem->show();
-		for (int i = 0; i < ings.size(); i++) {
-			auto id = ings.at(i).id;
-			bool Problem = true;
-			for (int j = 0; j < Viable_Stuff.size(); j++) {
-				if (Viable_Stuff.at(j) == id) {
-					Problem = false;
-				}
-			}
-			if (Problem) { Spoiled = true; }
-		}
 		Curritem->Chopped = true;
-		//TODO add spoiled food
+		//TODO add timer
 	}
 	virtual Dish* Unload() override
 	{
@@ -194,29 +201,30 @@ class Guillotine : Container, Object
 		:
 		Object(gfx, guillotine)
 	{}
-	static std::vector<int > Viable_Stuff;///TODO add viable ingredients and dishes
-	Dish* Curritem;
-	virtual void Accept(Dish* ingredient) override
+	static std::vector<int > Viable_Dishes;//TODO add viable dishes
+	static std::vector<int > Viable_Ingredients;//TODO add viable ingredients
+	Dish* Curritem = nullptr;
+	Ingredient* Curring = nullptr;
+	virtual void Accept(Dish* rhs) override
 	{
-		Curritem = ingredient;
-		Process();
+		if (Utils::has(Viable_Dishes, rhs->id)) {
+			Curritem = rhs;
+			Curring = nullptr;
+			Process();
+		}
+	}
+	virtual void Accept(Ingredient* rhs) override
+	{
+		if (Utils::has(Viable_Ingredients, rhs->id)) {
+			Curring = rhs;
+			Curritem = nullptr;
+			Process();
+		}
 	}
 	virtual void Process() override
 	{
-		bool Spoiled = true;
-		auto ings = Curritem->show();
-		for (int i = 0; i < ings.size(); i++) {
-			auto id = ings.at(i).id;
-			bool Problem = true;
-			for (int j = 0; j < Viable_Stuff.size(); j++) {
-				if (Viable_Stuff.at(j) == id) {
-					Problem = false;
-				}
-			}
-			if (Problem) { Spoiled = true; }
-		}
 		Curritem->Chopped = true;
-		//TODO add spoiled food
+		//TODO add timer
 	}
 	virtual Dish* Unload() override
 	{
@@ -230,29 +238,30 @@ class Grill : Container, Object
 		:
 		Object(gfx, grill)
 	{}
-	static std::vector<int > Viable_Stuff;///TODO add viable ingredients and dishes
-	Dish* Curritem;
-	virtual void Accept(Dish* ingredient) override
+	static std::vector<int > Viable_Dishes;//TODO add viable dishes
+	static std::vector<int > Viable_Ingredients;//TODO add viable ingredients
+	Dish* Curritem = nullptr;
+	Ingredient* Curring = nullptr;
+	virtual void Accept(Dish* rhs) override
 	{
-		Curritem = ingredient;
-		Process();
+		if (Utils::has(Viable_Dishes, rhs->id)) {
+			Curritem = rhs;
+			Curring = nullptr;
+			Process();
+		}
+	}
+	virtual void Accept(Ingredient* rhs) override
+	{
+		if (Utils::has(Viable_Ingredients, rhs->id)) {
+			Curring = rhs;
+			Curritem = nullptr;
+			Process();
+		}
 	}
 	virtual void Process() override
 	{
-		bool Spoiled = true;
-		auto ings = Curritem->show();
-		for (int i = 0; i < ings.size(); i++) {
-			auto id = ings.at(i).id;
-			bool Problem = true;
-			for (int j = 0; j < Viable_Stuff.size(); j++) {
-				if (Viable_Stuff.at(j) == id) {
-					Problem = false;
-				}
-			}
-			if (Problem) { Spoiled = true; }
-		}
 		Curritem->Grilled = true;
-		//TODO add spoiled food
+		//TODO add timer
 	}
 	virtual Dish* Unload() override
 	{

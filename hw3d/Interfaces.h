@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "Rect.h"
+#include <memeory>
 //holds all object interaction interfaeces
 
 class SpawnBlock
@@ -40,6 +41,8 @@ public:
 	static const int identifier = 4;
 	bool Cooked = false;
 	bool Ground = false;
+	bool Baked = false;
+	bool Steamed = false;
 	bool Chopped = false;
 	bool Grilled = false;
 	static const int id;
@@ -64,6 +67,8 @@ public:
 	virtual std::vector<Ingredient> show() = 0;
 	bool Cooked = false;
 	bool Ground = false;
+	bool Baked = false;
+	bool Steamed = false;
 	bool Chopped = false;
 	bool Grilled = false;
 	~Dish(){}
@@ -73,10 +78,10 @@ class Container
 {
 public:
 	static const int identifier = 6;
-	bool Cooked;
-	virtual void Accept(Dish* ingredient) = 0;
+	virtual void Accept(Dish* rhs) = 0;
+	virtual void Accept(Ingredient* rhs) = 0;
 	virtual void Process() = 0;
-	virtual Dish* Unload() = 0;
+	virtual std::pair<Dish*,Ingredient*> Unload() = 0;
 	~Container(){}
 };
 
