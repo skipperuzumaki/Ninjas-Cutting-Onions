@@ -5,8 +5,10 @@
 #include <vector>
 #include "Graphics.h"
 #include "Utils.h"
+#include "Ingredients.h"
+#include "Dishes.h"
 
-//TODO complete bassed on stove
+//TODO add moodels and ingredients and dishes
 
 std::vector<std::string> stove;
 class Stove : Container, Object
@@ -43,7 +45,10 @@ class Stove : Container, Object
 	}
 	virtual std::pair<Dish*, Ingredient*> Unload() override
 	{
-		return std::make_pair<>(Curritem, Curring);
+		auto ret = std::make_pair<>(Curritem, Curring);
+		Curritem = nullptr;
+		Curring = nullptr;
+		return ret;
 	}
 };
 std::vector<std::string> oven;
@@ -76,11 +81,15 @@ class Oven : Container, Object
 	virtual void Process() override
 	{
 		Curritem->Baked = true;
+		Curring->Baked = true;
 		//TODO add timer
 	}
-	virtual Dish* Unload() override
+	virtual std::pair<Dish*, Ingredient*> Unload() override
 	{
-		return Curritem;
+		auto ret = std::make_pair<>(Curritem, Curring);
+		Curritem = nullptr;
+		Curring = nullptr;
+		return ret;
 	}
 };
 std::vector<std::string> steamer;
@@ -113,11 +122,15 @@ class Steamer : Container, Object
 	virtual void Process() override
 	{
 		Curritem->Steamed = true;
+		Curring->Steamed = true;
 		//TODO add timer
 	}
-	virtual Dish* Unload() override
+	virtual std::pair<Dish*, Ingredient*> Unload() override
 	{
-		return Curritem;
+		auto ret = std::make_pair<>(Curritem, Curring);
+		Curritem = nullptr;
+		Curring = nullptr;
+		return ret;
 	}
 };
 std::vector<std::string> grinder;
@@ -150,11 +163,15 @@ class Grinder : Container, Object
 	virtual void Process() override
 	{
 		Curritem->Ground = true;
+		Curring->Ground = true;
 		//TODO add timer
 	}
-	virtual Dish* Unload() override
+	virtual std::pair<Dish*, Ingredient*> Unload() override
 	{
-		return Curritem;
+		auto ret = std::make_pair<>(Curritem, Curring);
+		Curritem = nullptr;
+		Curring = nullptr;
+		return ret;
 	}
 };
 std::vector<std::string> lawn_mower;
@@ -187,11 +204,15 @@ class Lawn_Mower : Container, Object
 	virtual void Process() override
 	{
 		Curritem->Chopped = true;
+		Curring->Chopped = true;
 		//TODO add timer
 	}
-	virtual Dish* Unload() override
+	virtual std::pair<Dish*, Ingredient*> Unload() override
 	{
-		return Curritem;
+		auto ret = std::make_pair<>(Curritem, Curring);
+		Curritem = nullptr;
+		Curring = nullptr;
+		return ret;
 	}
 };
 std::vector<std::string> guillotine;
@@ -224,11 +245,15 @@ class Guillotine : Container, Object
 	virtual void Process() override
 	{
 		Curritem->Chopped = true;
+		Curring->Chopped = true;
 		//TODO add timer
 	}
-	virtual Dish* Unload() override
+	virtual std::pair<Dish*, Ingredient*> Unload() override
 	{
-		return Curritem;
+		auto ret = std::make_pair<>(Curritem, Curring);
+		Curritem = nullptr;
+		Curring = nullptr;
+		return ret;
 	}
 };
 std::vector<std::string> grill;
@@ -261,10 +286,14 @@ class Grill : Container, Object
 	virtual void Process() override
 	{
 		Curritem->Grilled = true;
+		Curring->Grilled = true;
 		//TODO add timer
 	}
-	virtual Dish* Unload() override
+	virtual std::pair<Dish*, Ingredient*> Unload() override
 	{
-		return Curritem;
+		auto ret = std::make_pair<>(Curritem, Curring);
+		Curritem = nullptr;
+		Curring = nullptr;
+		return ret;
 	}
 };

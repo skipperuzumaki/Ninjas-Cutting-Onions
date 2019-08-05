@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "Rect.h"
-#include <memeory>
+#include <memory>
 //holds all object interaction interfaeces
 
 class SpawnBlock
