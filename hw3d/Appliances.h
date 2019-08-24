@@ -9,6 +9,7 @@
 #include "Dishes.h"
 
 //TODO add models and ingredients and dishes
+//testing new machine
 //TODO remove that wierd system of declaing vectors beforehand and use Utils::make_vector
 
 class Stove : Container, Object
